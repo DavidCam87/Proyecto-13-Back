@@ -6,6 +6,7 @@ const authRouter = require("./src/api/routes/authRoutes.js");
 const appointmentRouter = require("./src/api/routes/appointmentRoutes.js");
 const mecanicRouter = require("./src/api/routes/mecanicRoutes.js");
 const serviceRouter = require("./src/api/routes/serviceRoutes.js");
+const userRouter = require("./src/api/routes/userRoutes.js");
 const adminRouter = require("./src/api/routes/adminRoutes.js");
 const { authenticate, isAdmin } = require("./src/middleware/authMiddleware.js");
 
@@ -22,6 +23,7 @@ app.use("/api/v1/service", serviceRouter);
 // Rutas protegidas
 app.use("/api/v1/appointment", authenticate, appointmentRouter);
 app.use("/api/v1/mecanic", authenticate, mecanicRouter);
+app.use("/api/v1/perfil", authenticate, userRouter);
 
 // Rutas de administrador
 app.use("/api/v1/admin", authenticate, isAdmin, adminRouter);

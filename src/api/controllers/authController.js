@@ -21,7 +21,7 @@ const register = [
         $or: [{ name: req.body.name }, { email: req.body.email }]
       });
       if (userDuplicated) {
-        return res.status(420).json({ message: "Nombre de usuario ya existente ❌" });
+        return res.status(420).json({ message: "Nombre de usuario o email ya existente ❌" });
       }
 
       const newUser = new User({
@@ -32,7 +32,7 @@ const register = [
       });
 
       const user = await newUser.save();
-      return res.status(201).json(user);
+      return res.status(201).json({ message: "Usuario registrado correctamente✅", user });
     } catch (error) {
       console.error("Error en el registro:", error);
       res.status(500).json({ message: "Error en el servidor", error: error.message, status: error.status, stack: error.stack });

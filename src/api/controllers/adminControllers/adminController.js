@@ -1,7 +1,7 @@
-const Appointment = require("../models/appointment.js");
-const User = require("../models/user.js");
-const Mecanic = require("../models/mecanic.js");
-const Service = require("../models/Service.js");
+const Appointment = require("../../models/appointment.js");
+const User = require("../../models/user.js");
+const Mecanic = require("../../models/mecanic.js");
+const Service = require("../../models/Service.js");
 
 const getAllAppointments = async (req, res, next) => {
   try {
@@ -143,5 +143,5 @@ module.exports = {
   deleteMecanic,
   createService,
   updateService,
-  deleteService,
+  deleteService
 };
