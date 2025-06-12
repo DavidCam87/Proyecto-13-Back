@@ -1,5 +1,5 @@
 const Appointment = require("../../models/appointment.js");
-const User = require("../../models/user.js");
+const User = require("../../models/User.js");
 const Mecanic = require("../../models/mecanic.js");
 const Service = require("../../models/Service.js");
 const xlsx = require('xlsx');
